@@ -1,6 +1,6 @@
 var friendsArr = [{
-    "name": "Ahmed",
-    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name": "Lois Lane",
+    "photo": "http://cdn2.darkhorizons.com/wp-content/uploads/2016/09/kidder-not-a-fan-of-zack-snyders-lois-lane.jpg",
     "scores": [
         5,
         1,
@@ -13,6 +13,41 @@ var friendsArr = [{
         4,
         1,
     ]
-}];
+},{
+    "name": "Charles Xavier",
+    "photo": "https://pbs.twimg.com/profile_images/483012184759599105/Wz5wUEZv.jpeg",
+    "scores": [
+        4,
+        5,
+        3,
+        3,
+        1,
+        5,
+        1,
+        4,
+        3,
+        5,
+    ]
+},{
+    "name": "Amanda Waller",
+    "photo": "http://screenrant.com/wp-content/uploads/Suicide-Squad-Movie-Amanda-Waller-Role.jpg",
+    "scores": [
+        3,
+        4,
+        2,
+        2,
+        5,
+        4,
+        5,
+        3,
+        2,
+        4,
+    ]
+}
+];
 
 module.exports = friendsArr;
+
+// $(document).ready( function(){
+//
+// });
