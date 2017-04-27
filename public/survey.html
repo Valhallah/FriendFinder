@@ -29,12 +29,12 @@
 				<form>
 					<div id="name-group" class="form-group">
 						<h3>Name (required)</h3>
-						<input type="text" class="form-control" id="name" placeholder="Lois Lane">
+						<input type="text" class="form-control" id="name" placeholder="Lois Lane" style="border-top: none; border-right: none; border-left: none;">
 						<span id="name-span" aria-hidden="true"></span>
 					</div>
 					<div id="photo-group" class="form-group">
 						<h3>Link to Photograph (required)</h3>
-						<input type="text" class="form-control" id="photo" placeholder="www.loislane.com/photo">
+						<input type="text" class="form-control" id="photo" placeholder="www.loislane.com/photo" style="border-top: none; border-right: none; border-left: none;">
 						<span id="photo-span" aria-hidden="true"></span>
 					</div>
 				</form>
@@ -45,13 +45,14 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
+				<div class="panel panel-default" style="border:none;">
 					<div class="panel-heading" id="panel-top">Friend-Match Quiz</div>
 					<div class="panel-body">
 						<form>
 							<div class="form-group">
 								<label>I like to make neat things for the internets using numbers and letters.</label>
-								<select class="form-control" id="q1">
+								<select data-placeholder="" class="chosen-select" id="q1">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -61,7 +62,8 @@
 							</div>
 							<div class="form-group">
 								<label>I think the front end is the bee's knees.</label>
-								<select class="form-control" id="q2">
+								<select data-placeholder="" class="chosen-select" id="q2">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -71,7 +73,8 @@
 							</div>
 							<div class="form-group">
 								<label>I think the back end is the cat's pajamas.</label>
-								<select class="form-control" id="q3">
+								<select data-placeholder="" class="chosen-select" id="q3">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -80,8 +83,9 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>Even though I would like a career using Javascript, I secretly (or openly) think Javascript is trying to kill me.</label>
-								<select class="form-control" id="q4">
+								<label>Even though I would like a career working with Javascript, I secretly (or openly) think Javascript is trying to kill me.</label>
+								<select data-placeholder="" class="chosen-select" id="q4">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -91,7 +95,8 @@
 							</div>
 							<div class="form-group">
 								<label>When frustrated, I choose to hit myself in the face rather than hit my Mac in the face becuase facial reconstructive surgery is more fun than setting up a new machine.</label>
-								<select class="form-control" id="q5">
+								<select data-placeholder="" class="chosen-select" id="q5">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -101,7 +106,8 @@
 							</div>
 							<div class="form-group">
 								<label>When JavaScript gives me a console error on line 68 when I only have 43 lines of code, I die a little inside.</label>
-								<select class="form-control" id="q6">
+								<select data-placeholder="" class="chosen-select" id="q6">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -111,7 +117,8 @@
 							</div>
 							<div class="form-group">
 								<label>The fact that at some point in my career a client might ask me to use Flash or allow for IE usage both irritates and terrifies me. .</label>
-								<select class="form-control" id="q7">
+								<select data-placeholder="" class="chosen-select" id="q7">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -121,7 +128,8 @@
 							</div>
 							<div class="form-group">
 								<label>All I do is study coding languages.</label>
-								<select class="form-control" id="q8">
+								<select data-placeholder="" class="chosen-select" id="q8">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -131,7 +139,8 @@
 							</div>
 							<div class="form-group">
 								<label>All I do is study coding languages and consume caffeine.</label>
-								<select class="form-control" id="q9">
+								<select data-placeholder="" class="chosen-select" id="q9">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -141,7 +150,8 @@
 							</div>
 							<div class="form-group">
 								<label>All I do is study coding languages and consume caffeine and alcohol.</label>
-								<select class="form-control" id="q10">
+								<select data-placeholder="" class="chosen-select" id="q10">
+									<option value=""></option>
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
                       <option>3</option>
@@ -156,7 +166,7 @@
 			</div>
 		</div>
 
-		<div class="modal fade" id="modal" role="dialog">
+		<div class="modal fade" id="resultsModal" role="dialog">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">

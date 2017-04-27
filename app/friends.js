@@ -1,4 +1,4 @@
-var friendsArr = [{
+var friends = [{
     "name": "Lois Lane",
     "photo": "http://cdn2.darkhorizons.com/wp-content/uploads/2016/09/kidder-not-a-fan-of-zack-snyders-lois-lane.jpg",
     "scores": [
@@ -9,7 +9,7 @@ var friendsArr = [{
         5,
         1,
         2,
-        5, 
+        5,
         4,
         1,
     ]
@@ -46,7 +46,7 @@ var friendsArr = [{
 }
 ];
 
-module.exports = friendsArr;
+module.exports = friends;
 
 // $(document).ready(function(){
 //
