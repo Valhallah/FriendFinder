@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Friend Finder</title> 
+	<title>Friend Finder</title>
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -50,7 +50,7 @@
 					<div class="panel-body">
 						<form>
 							<div class="form-group">
-								<label>I like to watch Star Wars 3.5 - 7 ad-nauseum.</label>
+								<label>I like to make neat things for the internets using numbers and letters.</label>
 								<select class="form-control" id="q1">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -60,7 +60,7 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>I think "Game of Thrones" the the series is better than the books (be honest).</label>
+								<label>I think the front end is the bee's knees.</label>
 								<select class="form-control" id="q2">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -70,7 +70,7 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>I like to make neat things for the internets using numbers and letters.</label>
+								<label>I think the back end is the cat's pajamas.</label>
 								<select class="form-control" id="q3">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -90,7 +90,7 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>When frustrated, I choose to hit myself in the face rather than hit my Mac in the face (becuase Javascript).</label>
+								<label>When frustrated, I choose to hit myself in the face rather than hit my Mac in the face becuase facial reconstructive surgery is more fun than setting up a new machine.</label>
 								<select class="form-control" id="q5">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -100,7 +100,7 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>Thor is my favorite dumb blond.</label>
+								<label>When JavaScript gives me a console error on line 68 when I only have 43 lines of code, I die a little inside.</label>
 								<select class="form-control" id="q6">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -110,7 +110,7 @@
                     </select>
 							</div>
 							<div class="form-group">
-								<label>I think Batman vs Superman makes zero sense since Superman is an alien who has unlimited strength, laser eyes, and the power of flight.</label>
+								<label>The fact that at some point in my career a client might ask me to use Flash or allow for IE usage both irritates and terrifies me. .</label>
 								<select class="form-control" id="q7">
                       <option>1 (strongly disagree)</option>
                       <option>2</option>
@@ -149,7 +149,7 @@
                       <option>5 (strongly agree)</option>
                     </select>
 							</div>
-							<button class="btn" id="submit-button" type="submit" disabled="true">Submit</button>
+							<button class="btn" id="submit-button" type="submit">Submit</button>
 						</form>
 					</div>
 				</div>
@@ -176,7 +176,79 @@
 		</div>
 
 	</div>
-	<script type="text/javascript" src="../app/friends.js"></script>
+
+	<script type="text/javascript">
+
+
+	  	// Chosen CSS
+	    var config = {
+	      '.chosen-select'           : {},
+	      '.chosen-select-deselect'  : {allow_single_deselect:true},
+	      '.chosen-select-no-single' : {disable_search_threshold:10},
+	      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+	      '.chosen-select-width'     : {width:"95%"}
+	    }
+	    for (var selector in config) {
+	      $(selector).chosen(config[selector]);
+	    }
+
+	    // Capture the form inputs
+	    $("#submit").on("click", function(){
+
+	    	// Form validation
+	    	function validateForm() {
+			  var isValid = true;
+			  $('.form-control').each(function() {
+			    if ( $(this).val() === '' )
+			        isValid = false;
+			  });
+
+			  $('.chosen-select').each(function() {
+
+			  	if( $(this).val() === "")
+			  		isValid = false
+			  })
+			  return isValid;
+			}
+
+			// If all required fields are filled
+			if (validateForm() == true)
+			{
+				// Create an object for the user's data
+		    	var userData = {
+		    		name: $("#name").val(),
+		    		photo: $("#photo").val(),
+		    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+						$("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+		    	}
+
+
+		    	// Grab the URL of the website
+		    	var currentURL = window.location.origin;
+
+		    	// AJAX post the data to the friends API.
+		    	$.post(currentURL + "/api/friends", userData, function(data){
+
+		    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+		    		$("#match-name").text(data.name);
+		    		$('#match-image').attr("src", data.photo);
+
+			    	// Show the modal with the best match
+			    	$("#resultsModal").modal('toggle');
+
+		    	});
+			}
+			else
+			{
+				alert("Please fill out all fields before submitting!");
+			}
+
+	    	return false;
+	    });
+
+
+
+	</script>
 </body>
 
 </html

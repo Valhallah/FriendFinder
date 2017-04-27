@@ -6,7 +6,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, '../public/survey.html'));
     });
 
+    app.get('/public/style_home.css', function(req, res) {
+      res.sendFile(path.join(__dirname, '../public/style_home.css'));
+    });
+
     app.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname, '../public/home.html'));
+      res.sendFile(path.join(__dirname, '../public/home.html'));
     });
 };

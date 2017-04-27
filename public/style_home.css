@@ -1,0 +1,19 @@
+.jumbotron{
+  margin-top: 5%;
+  height: 625px;
+  background-image: url('http://www.canadianbusiness.com/wp-content/uploads/2014/02/html500.jpg');
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+}
+
+
+.jtron-text{
+  margin-top: 5%;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}

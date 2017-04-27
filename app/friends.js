@@ -9,7 +9,7 @@ var friendsArr = [{
         5,
         1,
         2,
-        5,
+        5, 
         4,
         1,
     ]
@@ -48,6 +48,6 @@ var friendsArr = [{
 
 module.exports = friendsArr;
 
-// $(document).ready( function(){
+// $(document).ready(function(){
 //
 // });
