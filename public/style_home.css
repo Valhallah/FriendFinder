@@ -1,5 +1,5 @@
 .jumbotron{
-  height: 590px;
+  height: 550px;
   background-image: url('http://www.canadianbusiness.com/wp-content/uploads/2014/02/html500.jpg');
   background-repeat:no-repeat;
   -webkit-background-size:cover;
@@ -11,7 +11,6 @@
 
 
 .jtron-text{
-  margin-top: 5%;
   font-size: 45px;
   font-weight: bold;
   text-align: center;
